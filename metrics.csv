@@ -1,0 +1,12 @@
+ts,node_id,node_account,kpi,value
+2021-01-01 0:00:00,1,hebel,NUM_SESS,
+2021-01-01 0:00:00,1,hebel@email.com,NUM_SESS,12
+2021-01-02 0:00:00,1,hebel@email.com,CALL_DROP,15
+2021-01-02 0:00:00,1,not_an_email,NUM_SESS,13
+2021-01-02 0:00:00,1,,REG_USERS,10
+2021-01-02 0:00:00,2,,REG_USERS,-1
+2021-01-02 0:00:00,2,very_long_email_that_is_possibly_fake,CALL_DROP,100
+2021-01-03 0:00:00,1,fixed_email_a@email.com,REG_USERS,134000
+2021-01-03 0:00:00,2,fixed_email_b@email.com,NUM_SESS,17
+2021-01-03 0:00:00,2,fixed_name,REG_USERS,7654
+2021-01-04 0:00:00,3,node3@email.com,NUM_SESS,1757
