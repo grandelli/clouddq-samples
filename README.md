@@ -1,5 +1,5 @@
 # CloudDQ Demos
-This repo contains data quality checks for the [CloudDQ](https://github.com/GoogleCloudPlatform/cloud-data-quality) engine. 
+This repo contains data quality checks for the open source [CloudDQ](https://github.com/GoogleCloudPlatform/cloud-data-quality) engine. Be aware that the following does not apply to Dataplex DQ Tasks, which require minor changes to the code.
 
 ## Project Setup / Dataset Upload
 
