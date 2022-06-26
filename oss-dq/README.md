@@ -5,6 +5,13 @@ This repo contains data quality checks for the open source [CloudDQ](https://git
 
 * Follow the [instructions](https://github.com/GoogleCloudPlatform/cloud-data-quality/blob/main/USERMANUAL.md) to install CloudDQ in a virtual machine (e.g. GCP Cloud Shell CLI)
 * Copy the *oss-dq* folder (containing entities, rule bindings and rules) within the root folder of your CloudDQ deployment. 
+* Set the following variables in the shell:
+
+        export GOOGLE_CLOUD_PROJECT=$(gcloud config get-value project)
+        export CLOUDDQ_BIGQUERY_REGION=EU
+        export CLOUDDQ_BIGQUERY_DATASET=clouddq_dataset
+        export CLOUDDQ_TARGET_BIGQUERY_TABLE="<gcp-project-id>.clouddq_dataset.data_output"
+* Get into the root folder of your CloudDQ deployment
 
 ## CloudDQ Examples
 ### Count
