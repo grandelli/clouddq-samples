@@ -13,7 +13,7 @@ This repo contains data quality checks for the open source [CloudDQ](https://git
         export CLOUDDQ_TARGET_BIGQUERY_TABLE="<gcp-project-id>.clouddq_dataset.data_output"
 * Get into the root folder of your CloudDQ deployment
 
-## CloudDQ Examples
+## CloudDQ Launch
 ### Count
     python3 clouddq_executable.zip \
         DQ_COUNT \
