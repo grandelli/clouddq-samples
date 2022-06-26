@@ -10,5 +10,20 @@ The main differences are:
 
 ## Setup
 Since DQ Tasks are managed by Dataplex, there's no need to install any CloudDQ executable. Nonetheless, the GCP project must be configured to successfully run DQ Tasks.
+  
+It's extremely important that you follow all the steps reported in the [Before you begin](https://cloud.google.com/dataplex/docs/check-data-quality#before_you_begin) section of the Dataplex's documentation.
 
-## DQ Tasks Launch
+## Run
+
+## Troubleshooting
+##### When launching the DQ Task I get the following error in the serverless Spark job: "External network access. Drivers and executors have internal IP addresses. You can set up Cloud NAT to allow outbound traffic using internal IPs on your VPC network".
+Fix this by running the following command (you need to fill in your own params):
+  
+    gcloud compute firewall-rules create allow-internal-ingress \
+    --network="network-name" \
+    --source-ranges="subnetwork internal-IP ranges" \
+    --direction="ingress" \
+    --action="allow" \
+    --rules="all"
+
+Typically, the network name is *default*, while the source range depends on the subnet and the location you're using to run the job (e.g. in my case in EU it was 10.132.0.0/20).
