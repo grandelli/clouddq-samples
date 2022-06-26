@@ -111,3 +111,34 @@ rule_bindings:
           n_max: 1
     metadata:
       brand: two
+
+  DQ_NODE_ACCOUNT_VALUE_NOT_NULL:
+    entity_uri: bigquery://projects/clouddq-demo-353519/datasets/clouddq_dataset/tables/metrics
+    column_id: NODE_ACCOUNT
+    row_filter_id: NONE
+    rule_ids:
+      - NOT_NULL_SIMPLE
+
+  DQ_KPI_VALUE_VALUE_NOT_NULL:
+    entity_uri: bigquery://projects/clouddq-demo-353519/datasets/clouddq_dataset/tables/metrics
+    column_id: VALUE
+    row_filter_id: NONE
+    rule_ids:
+      - NOT_NULL_SIMPLE
+
+  DQ_KPI_DUPLICATE:
+    entity_uri: bigquery://projects/clouddq-demo-353519/datasets/clouddq_dataset/tables/metrics
+    column_id: VALUE
+    row_filter_id: NONE
+    rule_ids:
+      - NO_DUPLICATES_IN_COLUMN_GROUPS:
+          column_names: "ts,node_id,kpi"
+    metadata:
+      brand: one
+
+  DQ_FOREIGN_KEY_VALID:
+    entity_uri: bigquery://projects/clouddq-demo-353519/datasets/clouddq_dataset/tables/metrics
+    column_id: NODE_ID
+    row_filter_id: NONE
+    rule_ids:
+      - FOREIGN_KEY_VALID
