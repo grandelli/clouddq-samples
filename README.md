@@ -19,7 +19,6 @@ In the repo you can find a sample dataset. All the samples refer to this data:
         export GOOGLE_CLOUD_PROJECT=$(gcloud config get-value project)
         export CLOUDDQ_BIGQUERY_REGION=EU
         export CLOUDDQ_BIGQUERY_DATASET=clouddq_dataset
-        export CLOUDDQ_TARGET_BIGQUERY_TABLE="<gcp-project-id>.clouddq_dataset.data_output"
 * \[Only Once\] If not existing, create the dataset:
 
         bq --location=${CLOUDDQ_BIGQUERY_REGION} mk --dataset ${GOOGLE_CLOUD_PROJECT}:${CLOUDDQ_BIGQUERY_DATASET}
