@@ -9,11 +9,15 @@ The main differences are:
 * You can provide a single YAML file embedding all the mandatory section, or you can keep each section as a separate YAML file, zip all of them, and provide the archive file to Dataplex. In this repo you will find both the approaches (see the corresponding subfolder).      
 
 ## Setup
-Since DQ Tasks are managed by Dataplex, there's no need to install any CloudDQ executable. Nonetheless, the GCP project must be configured to successfully run DQ Tasks.
-  
-It's extremely important that you follow all the steps reported in the [Before you begin](https://cloud.google.com/dataplex/docs/check-data-quality#before_you_begin) section of the Dataplex's documentation.
+Since DQ Tasks are managed by Dataplex, there's no need to install any CloudDQ executable. Nonetheless, the GCP project must be configured to successfully run DQ Tasks:
+
+* Access Dataplex, create a data lake, a curated zone, and add the so far created *clouddq_dataset* as an asset. Select the same location where your BQ dataset resides (e.g. EU)
+* Follow all the steps reported in the [Before you begin](https://cloud.google.com/dataplex/docs/check-data-quality#before_you_begin) section of the Dataplex's documentation.
+* Create a bucket in the same location where your BQ dataset and your Dataplex lake resides
+* Upload in the bucket the single YAML file or the ZIP archive file, according to the mode you want to adopt (see the corresponding sub-folders)
 
 ## Run
+Follow the corresponding [section](https://cloud.google.com/dataplex/docs/check-data-quality#schedule_a_data_quality_task) in the Dataplex documentation to run the samples. With respect to the OSS CloudDQ sample, we will always run all the samples at once. 
 
 ## Troubleshooting
 ##### When launching the DQ Task I get the following error in the serverless Spark job: "External network access. Drivers and executors have internal IP addresses. You can set up Cloud NAT to allow outbound traffic using internal IPs on your VPC network".
