@@ -10,3 +10,22 @@ CloudDQ is also the data quality engine running under the hood of Google Cloud [
 
 ## Goal
 This repository contains common samples of CloudDQ routines, both for the OSS CloudDQ and [DQ Tasks](https://cloud.google.com/dataplex/docs/data-quality-overview).
+
+## Project Setup
+In the repo you can find a sample dataset. All the samples refer to this data:
+
+* Open a CLI in a virtual machine (e.g. Cloud Shell CLI) and run the following commands (**heads-up** replace the angular brackets with your own parameters):
+
+        export GOOGLE_CLOUD_PROJECT=$(gcloud config get-value project)
+        export CLOUDDQ_BIGQUERY_REGION=EU
+        export CLOUDDQ_BIGQUERY_DATASET=clouddq_dataset
+        export CLOUDDQ_TARGET_BIGQUERY_TABLE="<gcp-project-id>.clouddq_dataset.data_output"
+* \[Only Once\] If not existing, create the dataset:
+
+        bq --location=${CLOUDDQ_BIGQUERY_REGION} mk --dataset ${GOOGLE_CLOUD_PROJECT}:${CLOUDDQ_BIGQUERY_DATASET}
+
+### Metric dataset loading
+    bq load --source_format=CSV --replace --autodetect ${CLOUDDQ_BIGQUERY_DATASET}.metrics metrics.csv
+
+### Inventory loading
+    bq load --source_format=CSV --replace --autodetect ${CLOUDDQ_BIGQUERY_DATASET}.inventory inventory.csv
