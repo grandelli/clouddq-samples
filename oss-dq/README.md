@@ -1,7 +1,7 @@
 # OSS CloudDQ
 This repo contains data quality checks for the open source [CloudDQ](https://github.com/GoogleCloudPlatform/cloud-data-quality) engine. Be aware that the following does not apply to Dataplex DQ Tasks (refer to the corresponding section for this).
 
-## CloudDQ Setup
+## Setup
 
 * Follow the [instructions](https://github.com/GoogleCloudPlatform/cloud-data-quality/blob/main/USERMANUAL.md) to install CloudDQ in a virtual machine (e.g. GCP Cloud Shell CLI)
 * Copy the *oss-dq* folder (containing entities, rule bindings and rules) within the root folder of your CloudDQ deployment. 
@@ -13,7 +13,7 @@ This repo contains data quality checks for the open source [CloudDQ](https://git
         export CLOUDDQ_TARGET_BIGQUERY_TABLE="<gcp-project-id>.clouddq_dataset.data_output"
 * Get into the root folder of your CloudDQ deployment
 
-## CloudDQ Launch
+## Run
 ### Count
     python3 clouddq_executable.zip \
         DQ_COUNT \
