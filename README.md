@@ -1,4 +1,4 @@
-# CloudDQ Demos
+# CloudDQ Samples
 ## Context
 [CloudDQ](https://github.com/GoogleCloudPlatform/cloud-data-quality) is an open source cloud-native, declarative, and scalable Data Quality validation Command-Line Interface (CLI) application for Google BigQuery. CloudDQ allows users to define and schedule custom Data Quality checks across their BigQuery tables. Data Quality validation results will be available in another BigQuery table of their choice. Users can then build dashboards or consume data quality outputs programmatically and monitor data quality from the dashboards and data pipelines.
 
