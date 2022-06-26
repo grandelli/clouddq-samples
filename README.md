@@ -14,7 +14,7 @@ This repository contains common samples of CloudDQ routines, both for the OSS Cl
 ## Project Setup
 In the repo you can find a sample dataset. All the samples refer to this data:
 
-* Open a CLI in a virtual machine (e.g. Cloud Shell CLI) and run the following commands (**heads-up** replace the angular brackets with your own parameters):
+* Open a CLI in a virtual machine (e.g. Cloud Shell CLI) and run the following commands:
 
         export GOOGLE_CLOUD_PROJECT=$(gcloud config get-value project)
         export CLOUDDQ_BIGQUERY_REGION=EU
